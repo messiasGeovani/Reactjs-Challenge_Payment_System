@@ -1,5 +1,8 @@
 import React from 'react'
+// bootstrap import
 import 'bootstrap/dist/css/bootstrap.min.css'
+// css import
+import './Navbar.css'
 
 const Navbar = () => (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
