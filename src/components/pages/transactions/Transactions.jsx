@@ -1,71 +1,73 @@
 import React, { useState, useEffect } from 'react'
+// container component
+import { Container } from '../../UI/Container/Container'
+
 // link import
 import { Link } from 'react-router-dom'
 
-// container component
-import { Container } from '../../UI/Container/Container'
 // bootstrap import
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 // api utils import
 import { api } from '../../../utils/api'
 
-const Clients = () => {
+const Transactions = () => {
 
-    const [clients, setClients] = useState([])
-    const [update, setUpdate] = useState(0)
+    const [transaction, setTransaction] = useState([])
 
-    const getClients = async () => {
-        await api.get('/clients')
+    const getTransactions = async () => {
+        await api.get('/transactions')
             .then(result => {
-                setClients([
+                setTransaction([
                     ...result.data
                 ])
             })
             .catch(err => alert(err))
     }
 
-    const deleteClient = async client => {
-        await api.delete(`/client?id=${client}`)
+    const deleteTransaction = async transaction => {
+        await api.delete(`/transaction?id=${transaction}`)
             .then(result => {
-                alert('The client was removed')
+                alert('The transaction was removed')
             })
             .catch(err => alert(err))
     }
 
     useEffect(() => {
-        getClients()
+        getTransactions()
     })
 
-    console.log(clients)
+    console.log(transaction)
 
     return (
         <>
             <div className="container text-center">
-                <Container title="Clientes" btnText="Novo cliente" path="/clients/register" />
+                <Container title="Transações" btnText="Nova Transação" path="/transactions/register" />
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Cpf</th>
+                            <th scope="col">Remetente</th>
+                            <th scope="col">Destinatário</th>
+                            <th scope="col">Valor</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            clients.map(item => (
+                            transaction.map(item => (
                                 <tr>
-                                    <th scope="row">{item.name}</th>
-                                    <td>{item.cpf}</td>
+                                    <th scope="row">{item.sender}</th>
+                                    <td>{item.destination}</td>
+                                    <td>R$ {item.value}</td>
                                     <td>
-                                        <Link to="/clients/edit">
+                                        <Link to="/transactions/edit">
                                             <button className="btn btn-warning" onClick={() => {
-                                                localStorage.setItem('@Bank:ClientId', item._id)
-                                            }}>editar</button>
+                                                localStorage.setItem('@Bank:transactionId', item._id)
+                                            }}>Editar</button>
                                         </Link>
                                     </td>
                                     <td>
                                         <button className="btn btn-danger" onClick={() => {
-                                            deleteClient(item._id)
+                                            deleteTransaction(item._id)
                                         }}>Remover</button>
                                     </td>
                                 </tr>
@@ -78,4 +80,4 @@ const Clients = () => {
     )
 }
 
-export { Clients }
+export { Transactions }

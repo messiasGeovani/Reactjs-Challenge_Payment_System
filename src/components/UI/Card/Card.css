@@ -3,3 +3,8 @@ div.card {
    margin-bottom: 2%;
    margin-left: 35%
 }
+
+img.card-img {
+   width: 200px;
+   height: 30%
+}
