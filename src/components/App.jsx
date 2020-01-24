@@ -12,6 +12,8 @@ import { Home } from './pages/home/Home'
 
 // clients page import
 import { Clients } from './pages/clients/Clients'
+// clients page import
+import { Client } from './client/Client'
 
 // client form component
 import { ClientForm } from './client/ClientForm'
@@ -32,6 +34,9 @@ const App = () => (
                 </Route>
                 <Route exact="true" path="/clients">
                     <Clients />
+                </Route>
+                <Route exact="true" path="/client">
+                    <Client />
                 </Route>
                 <Route path="/clients/register">
                     <ClientForm title="Cadastrar cliente" method="post" />
