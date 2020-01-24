@@ -1,97 +1,68 @@
-# Reactjs-Challenge_Payment_System
-> A simple payment system api with nodejs
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Installation
+## Available Scripts
 
-To install and config the project dependencies, is recommended the [yarn](https://yarnpkg.com/lang/en/) package manager.
+In the project directory, you can run:
 
-```sh
-yarn install
-```
+### `npm start`
 
-However, you also can use [npm](https://www.npmjs.com/get-npm).
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```sh
-npm install
-```
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-## Usage manual
+### `npm test`
 
-- ### Routes guide
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-The project contains the current routes:
+### `npm run build`
 
-| Method  |  Uri | Functionality  | Content-Type  |
-|---|---|---|---|
-| POST  | /client  | Create a client.  | JSON  |
-| GET  | /clients  | Get all clients.  | JSON  |
-| GET  | /client  | Get a single client.  | JSON  |
-| PUT  | /client  | Update a client.  | JSON  |
-| DELETE  | /client  | delete a client.  | JSON  |
-| POST  | /transaction  | create a transaction.  | JSON  |
-| GET  | /transactions  | Get all transactions.  | JSON  |
-| GET  | /transaction  | Get a single transaction.  | JSON  |
-| PUT  | /transaction  | Update a transaction.  | JSON  |
-| DELETE  | /transaction  | Delete a transaction.  | JSON  |
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Project estructure
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-This project was created using the [express framework](https://expressjs.com/) to create the server routes and middlewares:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-└── src
-    ├── app
-    │   ├── controller
-    |   │   ├── ClientController.js
-    |   |   └── TransactionController.js
-    │   └── models
-    |       ├── Client.js
-    |       ├── Transaction.js
-    |       └── index.js
-    ├── config
-    |   └── database.js
-    |    
-    ├── app.js
-    ├── routes.js
-    └── server.js
-```
+### `npm run eject`
 
-## Project database
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-The MongoDB Data Base Management System was used to store the application data:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Client Schema
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-```
- {
-     name: String,
-     cpf: Number,
-     password: String
- }
-```
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### Transaction Schema
+## Learn More
 
-```
- {
-     sender: String,
-     destination: String,
-     value: Number
- }
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Meta
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Linkedin Profile – [Messias Geovani](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) 
+### Code Splitting
 
-Email – messias.geovani.lima@gmail.com
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-Github profile – [messiasGeovani](https://github.com/messiasGeovani)
+### Analyzing the Bundle Size
 
-## Contributing
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-1. Fork it (<https://https://github.com/messiasGeovani/Reactjs-Challenge_Payment_System/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
