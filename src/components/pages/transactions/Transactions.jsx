@@ -42,7 +42,7 @@ const Transactions = () => {
     return (
         <>
             <div className="container text-center">
-                <Container title="Transações" btnText="Nova Transação" path="/transactions/register" />
+                <Container title="Transações" btnText="Nova Transação" searchPath="/transaction" path="/transactions/register" />
                 <table class="table">
                     <thead>
                         <tr>

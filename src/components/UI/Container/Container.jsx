@@ -14,7 +14,7 @@ const Container = props => {
 
     const verifyRedirect = () => {
         if (redirect === true) {
-            return <Redirect push to="/client"/>
+            return <Redirect push to={props.searchPath} />
         }
     }
 
@@ -24,24 +24,39 @@ const Container = props => {
     }
 
     const handleSubmit = e => {
-        api.get(`/client?name=${text}`)
-            .then(result => {
-                if (result.data !== null) {
-                    localStorage.setItem('@Client', JSON.stringify(result.data))
-                    setRedirect(true)
-                } else {
-                    localStorage.removeItem('@Client')
-                    alert('Cliente não encontrado.')
-                }
-                console.log(result.data)
-            })
+
+        if (props.title === 'Clientes') {
+            api.get(`/client?name=${text}`)
+                .then(result => {
+                    if (result.data !== null) {
+                        localStorage.setItem('@Client', JSON.stringify(result.data))
+                        setRedirect(true)
+                    } else {
+                        localStorage.removeItem('@Client')
+                        alert('Não encontrado.')
+                    }
+                    console.log(result.data)
+                })
+        } else {
+            api.get(`/transaction?name=${text}`)
+                .then(result => {
+                    if (result.data !== null) {
+                        localStorage.setItem('@Transaction', JSON.stringify(result.data))
+                        setRedirect(true)
+                    } else {
+                        localStorage.removeItem('@Transaction')
+                        alert('Não encontrado.')
+                    }
+                    console.log(result.data)
+                })
+        }
 
         e.preventDefault()
     }
 
     return (
         <>
-        {verifyRedirect()}
+            {verifyRedirect()}
             <h3>{props.title}</h3>
             <br />
             <nav id="formNav" className="navbar navbar-dark bg-dark">

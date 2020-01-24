@@ -21,6 +21,9 @@ import { ClientForm } from './client/ClientForm'
 // transactions page import
 import { Transactions } from './pages/transactions/Transactions'
 
+// transaction component
+import { Transaction } from './Transaction/Transaction' 
+
 // transaction form import
 import { TransactionForm } from './Transaction/TransactionForm'
 
@@ -48,10 +51,13 @@ const App = () => (
                     <Transactions />
                 </Route>
                 <Route path="/transactions/register">
-                    <TransactionForm title="Realizar Tranzação" method="post" />
+                    <TransactionForm title="Realizar Transação" method="post" />
                 </Route>
                 <Route path="/transactions/edit">
                     <TransactionForm title="Editar Transação" method="put" />
+                </Route>
+                <Route path="/transaction">
+                    <Transaction />
                 </Route>
             </Switch>
         </Router>

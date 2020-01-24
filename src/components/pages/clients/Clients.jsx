@@ -42,7 +42,7 @@ const Clients = () => {
     return (
         <>
             <div className="container text-center">
-                <Container title="Clientes" btnText="Novo cliente" path="/clients/register" />
+                <Container title="Clientes" btnText="Novo cliente" searchPath="/client" path="/clients/register" />
                 <table class="table">
                     <thead>
                         <tr>

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 // link import
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 // api utils import
 import { api } from '../../utils/api'
@@ -13,6 +13,8 @@ function ClientForm(props) {
     const [name, setName] = useState('')
     const [cpf, setCpf] = useState(null)
     const [password, setPassword] = useState('')
+
+    const [redirect, setRedirect] = useState(false)
 
     const method = props.method
 
@@ -36,8 +38,6 @@ function ClientForm(props) {
 
     // send information function
     const handleSubmit = async e => {
-
-        
 
         const data = {
             name: name,
@@ -64,8 +64,15 @@ function ClientForm(props) {
 
     }
 
+    const verifyRedirect = () => {
+        if (redirect === true) {
+            return <Redirect to="/clients"/>
+        }
+    }
+
     return (
         <div className="container">
+        {verifyRedirect()}
             <h3 className="text-center">{props.title}</h3>
             <br />
             <form onSubmit={handleSubmit}>

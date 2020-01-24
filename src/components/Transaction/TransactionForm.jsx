@@ -80,7 +80,7 @@ const TransactionForm = props => {
                 </div>
                 <button type="submit" className="btn btn-primary">Cadastrar</button>
                 <Link to="/transactions">
-                    <button type="submit" className="btn btn-danger ml-3">Cancelar</button>
+                    <button type="submit" className="btn btn-danger ml-3">Sair</button>
                 </Link>
             </form>
         </div>
